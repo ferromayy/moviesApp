@@ -21,19 +21,65 @@ export default function MoviesApp({ movies }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage, setMoviesPerPage] = useState(12);
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [selectedMovie, setSelectedMovies] = useState(undefined);
+  const [selectedGenre, setSelectedGenre] = useState("");
   const indexOfLastmovie = currentPage * moviesPerPage;
   const indexOfFirstmovie = indexOfLastmovie - moviesPerPage;
 
-  const currentMovies = movies.slice(indexOfFirstmovie, indexOfLastmovie);
+  const filteredAndSortedMovies = movies
+    .filter(
+      (movie) =>
+        (!selectedMovie || movie.year.toString() === selectedMovie) &&
+        (!selectedGenre || movie.genre.includes(selectedGenre))
+    )
+    .sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.title.localeCompare(b.title);
+      } else if (sortOrder === "desc") {
+        return b.title.localeCompare(a.title);
+      }
+      return 0;
+    });
+
+  const currentMovies = filteredAndSortedMovies.slice(
+    indexOfFirstmovie,
+    indexOfLastmovie
+  );
 
   const handlePag = (number) => {
     setCurrentPage(number);
   };
+  const handleSort = (order) => {
+    if (order === "default") {
+      setSortOrder("default");
+    } else {
+      setSortOrder(order);
+    }
+    setCurrentPage(1);
+  };
+
+  const handleMovieYear = (year) => {
+    setSelectedMovies(year);
+    setCurrentPage(1);
+  };
+
+  const handleMovieGenre = (genre) => {
+    setSelectedGenre(genre);
+    setCurrentPage(1);
+  };
 
   return (
     <div>
-      <Banner />
-      <Filters />
+      <Banner  movies={movies}  />
+      <Filters
+        handleSort={handleSort}
+        handleMovieYear={handleMovieYear}
+        selectedMovie={selectedMovie}
+        movies={movies}
+        selectedGenre={selectedGenre}
+        handleMovieGenre={handleMovieGenre}
+      />
       <Cards movies={currentMovies} />
       <Pagination
         moviesPerPage={moviesPerPage}
