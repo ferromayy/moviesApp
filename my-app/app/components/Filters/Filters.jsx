@@ -5,6 +5,7 @@ export default function Filters({
   movies,
   selectedGenre,
   handleMovieGenre,
+  handleClearFilters,
 }) {
   const handleSelectChange = (event) => {
     handleSort(event.target.value);
@@ -15,9 +16,14 @@ export default function Filters({
   const handleSelectGenre = (ev) => {
     handleMovieGenre(ev.target.value);
   };
+  const handleFilters = () => {
+    handleClearFilters();
+  };
 
   const uniqueYears = [...new Set(movies.map((movie) => movie.year))];
   const uniqueGenres = [...new Set(movies.flatMap((movie) => movie.genre))];
+
+  uniqueYears.sort((a, b) => a - b);
   return (
     <div>
       <select onChange={handleSelectMovieYear} value={selectedMovie}>
@@ -41,6 +47,7 @@ export default function Filters({
           </option>
         ))}
       </select>
+      <button onClick={handleFilters}>Limpiar</button>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function MoviesApp({ movies }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage, setMoviesPerPage] = useState(12);
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState(null);
   const [selectedMovie, setSelectedMovies] = useState(undefined);
   const [selectedGenre, setSelectedGenre] = useState("");
   const indexOfLastmovie = currentPage * moviesPerPage;
@@ -52,7 +52,7 @@ export default function MoviesApp({ movies }) {
   };
   const handleSort = (order) => {
     if (order === "default") {
-      setSortOrder("default");
+      setSortOrder(null);
     } else {
       setSortOrder(order);
     }
@@ -69,9 +69,16 @@ export default function MoviesApp({ movies }) {
     setCurrentPage(1);
   };
 
+  const handleClearFilters = () => {
+    setSortOrder(null);
+    setSelectedMovies("");
+    setSelectedGenre("");
+    setCurrentPage(1);
+  };
+
   return (
     <div>
-      <Banner  movies={movies}  />
+      <Banner movies={movies} />
       <Filters
         handleSort={handleSort}
         handleMovieYear={handleMovieYear}
@@ -79,6 +86,7 @@ export default function MoviesApp({ movies }) {
         movies={movies}
         selectedGenre={selectedGenre}
         handleMovieGenre={handleMovieGenre}
+        handleClearFilters={handleClearFilters}
       />
       <Cards movies={currentMovies} />
       <Pagination
