@@ -1,0 +1,20 @@
+.containerFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.containerFooter p {
+  text-align: center;
+}
