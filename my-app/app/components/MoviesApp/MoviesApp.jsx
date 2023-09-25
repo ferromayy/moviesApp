@@ -7,8 +7,6 @@ import React, { useState } from "react";
 import Filters from "../Filters/Filters";
 
 export default function MoviesApp({ movies }) {
-  //   console.log(movies, "jeje");
-
   //   {
   //       rank: 100,
   //       title: 'Vertigo',
@@ -21,12 +19,27 @@ export default function MoviesApp({ movies }) {
   //       year: 1958
   //     }
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [moviesPerPage, setMoviesPerPage] = useState(12);
+  const indexOfLastmovie = currentPage * moviesPerPage;
+  const indexOfFirstmovie = indexOfLastmovie - moviesPerPage;
+
+  const currentMovies = movies.slice(indexOfFirstmovie, indexOfLastmovie);
+
+  const handlePag = (number) => {
+    setCurrentPage(number);
+  };
+
   return (
     <div>
       <Banner />
       <Filters />
-      <Cards />
-      <Pagination />
+      <Cards movies={currentMovies} />
+      <Pagination
+        moviesPerPage={moviesPerPage}
+        allMovies={movies.length}
+        handlePag={handlePag}
+      />
       <Footer />
     </div>
   );
