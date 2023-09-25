@@ -5,7 +5,6 @@ import Footer from "../Footer/Footer";
 import Pagination from "../Pagination/Pagination";
 import React, { useState } from "react";
 import Filters from "../Filters/Filters";
-import styles from "./MoviesApp.module.css";
 
 export default function MoviesApp({ movies }) {
   //   console.log(movies, "jeje");

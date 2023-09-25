@@ -20,7 +20,7 @@ async function moviesData() {
 
 export default async function Home() {
   const getMoviesData = await moviesData();
-  console.log(getMoviesData, "data");
+  // console.log(getMoviesData, "data");
 
   return (
     <div>

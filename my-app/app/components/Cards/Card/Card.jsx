@@ -1,5 +1,5 @@
 "use client";
-import styles from "./Card.module.css";
+
 import Image from "next/image";
 export default function Card({ name, img, realesed }) {
   return (
