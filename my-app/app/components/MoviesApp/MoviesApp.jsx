@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import Filters from "../Filters/Filters";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./MoviesApp.module.css";
+
 export default function MoviesApp({ movies }) {
   //   {
   //       rank: 100,

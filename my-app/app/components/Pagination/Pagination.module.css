@@ -1,0 +1,18 @@
+.containerPagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.buttonPag {
+  width: 34px;
+  height: 34px;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  background-color: white;
+}
+
+.selectedButton {
+  background: #be123c;
+}
