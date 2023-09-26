@@ -1,4 +1,4 @@
-import Card from "./Card/Card";
+import Card from "./Card/page";
 import styles from "./Cards.module.css";
 export default function Cards({ movies }) {
   return (
