@@ -1,3 +1,4 @@
+import styles from "./Filter.module.css";
 export default function Filters({
   handleSort,
   handleMovieYear,
@@ -25,9 +26,9 @@ export default function Filters({
 
   uniqueYears.sort((a, b) => a - b);
   return (
-    <div>
+    <div className={styles.containerFilter}>
       <select onChange={handleSelectMovieYear} value={selectedMovie}>
-        <option value="">AÑOS</option>
+        <option value="">AÑO</option>
         {uniqueYears?.map((year) => (
           <option key={year} value={year}>
             {year}
@@ -40,7 +41,7 @@ export default function Filters({
         <option value="desc">Z-A</option>
       </select>
       <select value={selectedGenre} onChange={handleSelectGenre}>
-        <option value="">GENEROS</option>
+        <option value="">GENEROS </option>
         {uniqueGenres?.map((genre) => (
           <option value={genre} key={genre}>
             {genre}

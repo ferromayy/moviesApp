@@ -1,24 +1,42 @@
-/* Banner.module.css */
-
 .bannerContainer {
-  position: relative;
-  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  /* background-position: center center;
+  background-size: 80%; */
+}
+
+.headerCarrousel {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.info {
+  border: 2px solid red;
+  width: 50%;
+}
+
+.info h1 {
+  font-family: "DM Sans", sans-serif;
+  color: white;
+  font-size: 48px;
 }
 
 .carousel {
-  position: relative;
+  /* position: relative;
   width: 1000px;
   height: 500px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .prevButton,
 .nextButton {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
@@ -28,19 +46,19 @@
   cursor: pointer;
   border: none;
   outline: none;
-  z-index: 2;
+  z-index: 2; */
 }
 
 .prevButton {
-  left: 20px;
+  /* left: 20px; */
 }
 
 .nextButton {
-  right: 20px;
+  /* right: 20px; */
 }
 
 .movieInfo {
-  position: absolute;
+  /* position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -50,28 +68,28 @@
   width: 100%;
   padding: 20px;
   z-index: 1;
-  bottom: 0;
+  bottom: 0; */
 }
 
 .thumbnail {
-  width: 100px;
+  /* width: 100px;
   height: 150px;
-  margin-right: 20px;
+  margin-right: 20px; */
 }
 
 .movieDetails {
-  flex: 1;
+  /* flex: 1; */
 }
 
 .movieName {
-  font-size: 24px;
-  margin-bottom: 10px;
+  /* font-size: 24px;
+  margin-bottom: 10px; */
 }
 
 .movieRating {
-  font-size: 16px;
+  /* font-size: 16px; */
 }
 
 .movieDescription {
-  font-size: 16px;
+  /* font-size: 16px; */
 }

@@ -1,0 +1,22 @@
+.containerFilter {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.containerFilter select {
+  height: 50px;
+  width: 116px;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+}
+.containerFilter button {
+  height: 50px;
+  width: 116px;
+  border-radius: 6px;
+  background-color: #be123c;
+  color: white;
+  border-color: white;
+  font-size: 14px;
+}
