@@ -1,0 +1,31 @@
+.containerSerachBar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .designBar {
+    border: 1px #1f2937 solid;
+    width: 42%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+  
+    padding: 1px;
+  }
+  
+  .searchBox {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .buttonSearch {
+    background-color: transparent;
+    border: none;
+  }
+  .searchBox::placeholder {
+    font-size: 20px;
+  }
+  

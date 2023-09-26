@@ -5,7 +5,8 @@ import Footer from "../Footer/Footer";
 import Pagination from "../Pagination/Pagination";
 import React, { useState } from "react";
 import Filters from "../Filters/Filters";
-
+import SearchBar from "../SearchBar/SearchBar";
+import styles from "./MoviesApp.module.css";
 export default function MoviesApp({ movies }) {
   //   {
   //       rank: 100,
@@ -24,14 +25,18 @@ export default function MoviesApp({ movies }) {
   const [sortOrder, setSortOrder] = useState(null);
   const [selectedMovie, setSelectedMovies] = useState(undefined);
   const [selectedGenre, setSelectedGenre] = useState("");
+  const [searchMovieBar, setSearchMovieBar] = useState("");
+  const [nameInput, setNameInput] = useState("");
   const indexOfLastmovie = currentPage * moviesPerPage;
   const indexOfFirstmovie = indexOfLastmovie - moviesPerPage;
 
-  const filteredAndSortedMovies = movies
+  const moviesAllFilltered = movies
     .filter(
       (movie) =>
         (!selectedMovie || movie.year.toString() === selectedMovie) &&
-        (!selectedGenre || movie.genre.includes(selectedGenre))
+        (!selectedGenre || movie.genre.includes(selectedGenre)) &&
+        (!searchMovieBar ||
+          movie.title.toLowerCase().includes(searchMovieBar.toLowerCase()))
     )
     .sort((a, b) => {
       if (sortOrder === "asc") {
@@ -42,7 +47,7 @@ export default function MoviesApp({ movies }) {
       return 0;
     });
 
-  const currentMovies = filteredAndSortedMovies.slice(
+  const currentMovies = moviesAllFilltered.slice(
     indexOfFirstmovie,
     indexOfLastmovie
   );
@@ -69,16 +74,29 @@ export default function MoviesApp({ movies }) {
     setCurrentPage(1);
   };
 
+  const handleSearchBarMovie = (e) => {
+    setNameInput(e.target.value);
+  };
+
+  const handleOnclickName = () => {
+    setSearchMovieBar(nameInput);
+  };
+
   const handleClearFilters = () => {
     setSortOrder(null);
     setSelectedMovies("");
     setSelectedGenre("");
+    setNameInput("");
     setCurrentPage(1);
   };
 
   return (
-    <div>
+    <div className={styles.containerApp}>
       <Banner movies={movies} />
+      <SearchBar
+        handleOnclickName={handleOnclickName}
+        handleSearchBarMovie={handleSearchBarMovie}
+      />
       <Filters
         handleSort={handleSort}
         handleMovieYear={handleMovieYear}
