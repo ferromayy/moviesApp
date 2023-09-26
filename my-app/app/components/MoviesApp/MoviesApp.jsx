@@ -1,11 +1,11 @@
 "use client";
-import Banner from "../Banner/page";
-import Cards from "../Cards/page";
-import Footer from "../Footer/page";
-import Pagination from "../Pagination/page";
+import Banner from "../Banner/Banner";
+import Cards from "../Cards/Cards";
+import Footer from "../Footer/Footer";
+import Pagination from "../Pagination/Pagination";
 import React, { useState } from "react";
-import Filters from "../Filters/page";
-import SearchBar from "../SearchBar/page";
+import Filters from "../Filters/Filters";
+import SearchBar from "../SearchBar/SearchBar";
 import styles from "./MoviesApp.module.css";
 
 export default function MoviesApp({ movies }) {

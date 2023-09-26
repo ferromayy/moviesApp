@@ -1,4 +1,4 @@
-import MoviesApp from "./components/MoviesApp/page";
+import MoviesApp from "./components/MoviesApp/MoviesApp";
 const axios = require("axios");
 
 async function moviesData() {
