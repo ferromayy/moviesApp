@@ -1,0 +1,77 @@
+/* Banner.module.css */
+
+.bannerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.carousel {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 2;
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+.movieInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  padding: 20px;
+  z-index: 1;
+  bottom: 0;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.movieDetails {
+  flex: 1;
+}
+
+.movieName {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movieRating {
+  font-size: 16px;
+}
+
+.movieDescription {
+  font-size: 16px;
+}
