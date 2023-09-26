@@ -11,6 +11,7 @@
   font-size: 16px;
   text-align: center;
 }
+
 .containerFilter button {
   height: 50px;
   width: 116px;
@@ -19,4 +20,20 @@
   color: white;
   border-color: white;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .containerFilter {
+    gap: 10px;
+  }
+
+  .containerFilter select {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .containerFilter button {
+    width: 100px;
+    font-size: 12px;
+  }
 }

@@ -2,13 +2,11 @@ import MoviesApp from "./components/MoviesApp/MoviesApp";
 const axios = require("axios");
 
 async function moviesData() {
-  const axios = require("axios");
-
   const options = {
     method: "GET",
     url: "https://imdb-top-100-movies.p.rapidapi.com/",
     headers: {
-      "X-RapidAPI-Key": "50c98b0f39mshbe0b0186fa7379fp163db3jsn597436615968",
+      "X-RapidAPI-Key": "d3d1485e0cmshed8d4179b28aeb2p144798jsn0bef3e5948e4",
       "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com",
     },
   };

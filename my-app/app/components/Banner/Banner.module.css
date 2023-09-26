@@ -2,18 +2,20 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
-  /* background-position: center center;
-  background-size: 80%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 20px 20px 100px;
 }
 
 .headerCarrousel {
   display: flex;
-  gap: 35px;
   align-items: center;
+
+  gap: 7px;
 }
 
 .info {
-  border: 2px solid red;
   width: 50%;
 }
 
@@ -22,74 +24,56 @@
   color: white;
   font-size: 48px;
 }
-
-.carousel {
-  /* position: relative;
-  width: 1000px;
-  height: 500px;
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-
-.prevButton,
-.nextButton {
-  /* position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 24px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  z-index: 2; */
-}
-
-.prevButton {
-  /* left: 20px; */
-}
-
-.nextButton {
-  /* right: 20px; */
-}
-
-.movieInfo {
-  /* position: absolute;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 100%;
-  padding: 20px;
-  z-index: 1;
-  bottom: 0; */
-}
-
-.thumbnail {
-  /* width: 100px;
-  height: 150px;
-  margin-right: 20px; */
-}
-
-.movieDetails {
-  /* flex: 1; */
-}
-
-.movieName {
-  /* font-size: 24px;
-  margin-bottom: 10px; */
-}
-
 .movieRating {
-  /* font-size: 16px; */
+  color: white;
+  width: 320px;
+  height: 72;
+  font-size: 14px;
 }
 
 .movieDescription {
-  /* font-size: 16px; */
+  width: 400px;
+  height: 72px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+.containerTrailer {
+  background-color: #be123c;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.trailer {
+  width: 109px;
+  height: 24px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paginationDot {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.362);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid white;
+}
+
+.active {
+  background-color: white;
 }
