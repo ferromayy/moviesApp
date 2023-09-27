@@ -6,7 +6,7 @@ async function moviesData() {
     method: "GET",
     url: "https://imdb-top-100-movies.p.rapidapi.com/",
     headers: {
-      "X-RapidAPI-Key": "d3d1485e0cmshed8d4179b28aeb2p144798jsn0bef3e5948e4",
+      "X-RapidAPI-Key": "2c7876ae04msh7f7c9bda7cdf8e0p10edefjsn35ac5a923781",
       "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com",
     },
   };
